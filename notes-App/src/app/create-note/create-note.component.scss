@@ -1,0 +1,109 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+span {
+  margin-left: 15px;
+}
+
+button {
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgb(28, 134, 226);
+  background-color: rgb(28, 134, 226);
+  margin: 5px;
+  border-radius: 25px;
+  height: 2.4rem;
+  width: 5rem;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: 'Koulen', cursive;
+  margin: 0;
+  text-align: center;
+  background-color: rgb(28, 134, 226);
+  height: 80px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+li {
+  background-color: bisque;
+  display: grid;
+  grid-template: 1fr/1fr auto auto;
+
+  span {
+    padding-right: 24px;
+  }
+
+  border: 1px solid rgb(93, 102, 110);
+
+}
+
+ul {
+  width: 500px;
+  padding: 0;
+  height: 65vh;
+  overflow-y: auto;
+  margin: 0;
+}
+
+textarea {
+  width: 400px;
+  height: 300px;
+  resize: none;
+  background-color: bisque;
+  font-family: inherit;
+  padding: 15px;
+  font-size: 20px;
+  border: 2px solid rgb(28, 134, 226);
+  outline: none;
+
+  &:focus {
+    border-width: 4px;
+  }
+
+  box-sizing: border-box;
+}
+
+.stuff {
+  display: grid;
+  // justify-content: space-between;
+  // div {
+  //     flex-grow: 1;
+  //     padding: 0px 50px 0px 50px;
+  // }
+  grid-template: 1fr / auto auto;
+  grid-template-areas: "list editor";
+
+  .notes-list {
+    grid-area: list;
+  }
+
+  .notes-editor {
+    grid-area: editor;
+  }
+
+  @media screen and (max-width: 980px) {
+    grid-template: auto auto / 1fr;
+    grid-template-areas:
+      "editor"
+      "list";
+  }
+
+  place-items: start center;
+  font-family: 'Koulen',
+  cursive;
+}
+
+label,
+h2 {
+  font-size: 40px;
+  color: rgb(28, 134, 226);
+}

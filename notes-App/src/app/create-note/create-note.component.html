@@ -1,0 +1,30 @@
+<h1>QuickNotes</h1>
+
+<div class="buttons">
+  <button (click)="formVisible ? hideNote() : createNote()">{{formVisible ? "Discard" : "Create Note" }}</button>
+  <button (click)="getNotes()">View Notes</button>
+</div>
+
+
+<div class="stuff">
+  <div class="notes-list">
+    <h2>Your Notes:</h2>
+    <ul>
+      <li *ngFor="let note of notes">
+        <span>{{ note.content }}</span>
+        <button (click)="editNote(note)">Edit</button>
+        <button (click)="deleteNote(note.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="notes-editor">
+    <div class="form-group" *ngIf="formVisible">
+      <h2>{{isEditing ? "Edit:" : "New Note:"}}</h2>
+      
+      <textarea placeholder="enter your note here" type="text" [(ngModel)]="noteContent" name="name"></textarea>
+      <br>
+      <button (click)="submitNote()">Save</button>
+    </div>
+  </div>
+</div>
